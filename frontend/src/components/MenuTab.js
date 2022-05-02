@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/MenuTab.css";
+
 export default function MenuTab() {
   const [useIndex, setUseIndex] = useState(0);
   const menuList = [
@@ -10,6 +11,7 @@ export default function MenuTab() {
           onClick={() => clickHandler(0)}
         >
           검색
+         
         </li>
       ),
     },
