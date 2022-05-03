@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import styles from "../css/MenuTab.module.css";
-import Search from "./Search";
-import TimeTab from "./TimeTab";
+import styles from "../css/TimeTab.module.css";
 
-export default function MenuTab() {
+export default function TimeTab() {
   const [useIndex, setUseIndex] = useState(0);
   const menuArr = [
     {
@@ -12,10 +10,10 @@ export default function MenuTab() {
           className={useIndex === 0 ? styles.active : ""}
           onClick={() => clickHandler(0)}
         >
-          검색
+          하루
         </li>
       ),
-      content: <Search></Search>,
+      content: "",
     },
     {
       title: (
@@ -23,10 +21,19 @@ export default function MenuTab() {
           className={useIndex === 1 ? styles.active : ""}
           onClick={() => clickHandler(1)}
         >
-          화제가 됐던 검색어
+          일주일
         </li>
       ),
-      content: <TimeTab></TimeTab>,
+    },
+    {
+      title: (
+        <li
+          className={useIndex === 2 ? styles.active : ""}
+          onClick={() => clickHandler(2)}
+        >
+          일년
+        </li>
+      ),
     },
   ];
   const clickHandler = (_Id) => {
