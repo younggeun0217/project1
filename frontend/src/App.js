@@ -2,13 +2,16 @@ import logo from "./logo.svg";
 import "./App.css";
 import MenuTab from "./components/MenuTab";
 import Header from "./components/Header";
+import Search from "./components/Search";
 
 function App() {
   return (
-    <div>
-      <Header></Header>
-      <MenuTab></MenuTab>
-    </div>
+    <>
+      <div>
+        <Header></Header>
+        <MenuTab></MenuTab>
+      </div>
+    </>
     /*
     <div className="App">
       <header className="App-header">
