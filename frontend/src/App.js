@@ -6,12 +6,12 @@ import Search from "./components/Search";
 
 function App() {
   return (
-    <><div>
-      <Header></Header>
-      <MenuTab></MenuTab>
-      <Search></Search>
-    </div>
-   </>
+    <>
+      <div>
+        <Header></Header>
+        <MenuTab></MenuTab>
+      </div>
+    </>
     /*
     <div className="App">
       <header className="App-header">

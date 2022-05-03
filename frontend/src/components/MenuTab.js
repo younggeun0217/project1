@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "../css/MenuTab.css";
+import Search from "./Search";
 
 export default function MenuTab() {
   const [useIndex, setUseIndex] = useState(0);
-  const menuList = [
+  const menuArr = [
     {
       title: (
         <li
@@ -11,9 +12,9 @@ export default function MenuTab() {
           onClick={() => clickHandler(0)}
         >
           검색
-         
         </li>
       ),
+      content: <Search></Search>,
     },
     {
       title: (
@@ -30,10 +31,13 @@ export default function MenuTab() {
     setUseIndex(_Id);
   };
   return (
-    <ul className="tabs">
-      {menuList.map((section, index) => {
-        return section.title;
-      })}
-    </ul>
+    <>
+      <ul className="tabs">
+        {menuArr.map((section, index) => {
+          return section.title;
+        })}
+      </ul>
+      <div>{menuArr[useIndex].content}</div>
+    </>
   );
 }
