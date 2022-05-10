@@ -19,7 +19,7 @@ ul {
 }
 .tabs li {
   width: calc(100% / 2);
-  height: 50px;
+  height: auto;
   background-color: #2074dc;
   line-height: 50px;
   font-size: 20px;
@@ -33,7 +33,7 @@ ul {
 }
 .tabs li.active {
   width: calc(100% / 2);
-  height: 50px;
+  height: auto;
   background-color: #ffffff;
   line-height: 50px;
   font-size: 20px;

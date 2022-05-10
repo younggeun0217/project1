@@ -5,6 +5,12 @@ import TimeTab from "./TimeTab";
 
 export default function MenuTab() {
   const [useIndex, setUseIndex] = useState(0);
+  const clickHandler = (_Id) => {
+    setUseIndex(_Id);
+  };
+  const menuSelect = () => {
+    setUseIndex(0);
+  };
   const menuArr = [
     {
       title: (
@@ -26,12 +32,9 @@ export default function MenuTab() {
           화제가 됐던 검색어
         </li>
       ),
-      content: <TimeTab></TimeTab>,
+      content: <TimeTab menuClickHandler={menuSelect}></TimeTab>,
     },
   ];
-  const clickHandler = (_Id) => {
-    setUseIndex(_Id);
-  };
   return (
     <>
       <ul className={styles.tabs}>
