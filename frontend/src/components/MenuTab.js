@@ -39,7 +39,7 @@ export default function MenuTab() {
           return section.title;
         })}
       </ul>
-      <div>{menuArr[useIndex].content}</div>
+      {menuArr[useIndex].content}
     </>
   );
 }
