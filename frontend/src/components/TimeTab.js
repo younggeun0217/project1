@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styles from "../css/TimeTab.module.css";
+import TimeBar from "./TimeBar";
 
-export default function TimeTab() {
+export default function TimeTab(props) {
   const [useIndex, setUseIndex] = useState(0);
   const menuArr = [
     {
@@ -13,7 +14,6 @@ export default function TimeTab() {
           하루
         </li>
       ),
-      content: "",
     },
     {
       title: (
@@ -39,6 +39,9 @@ export default function TimeTab() {
   const clickHandler = (_Id) => {
     setUseIndex(_Id);
   };
+  const menuClickHandler = () => {
+    props.menuClickHandler();
+  };
   return (
     <>
       <ul className={styles.tabs}>
@@ -46,7 +49,7 @@ export default function TimeTab() {
           return section.title;
         })}
       </ul>
-      <div>{menuArr[useIndex].content}</div>
+      <TimeBar menuClickHandler={menuClickHandler}></TimeBar>
     </>
   );
 }
