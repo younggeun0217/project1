@@ -16,6 +16,7 @@
 }
 ul {
   overflow: auto;
+  margin-bottom: 0 !important;
 }
 .tabs li {
   width: calc(100% / 2);
