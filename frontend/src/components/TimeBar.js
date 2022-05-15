@@ -5,8 +5,8 @@ export default function TimeBar(props) {
   const [bars, setBars] = useState([]);
   useEffect(() => {
     setBars([
-      { title: "d", detail: "d" },
-      { title: "2", detail: "3" },
+      { title: "뉴스 제목", detail: 60 },
+      { title: "뉴스 제목2", detail: 50 },
     ]);
   }, []);
   const menuClickHandler = () => {
@@ -16,7 +16,12 @@ export default function TimeBar(props) {
     <ul className={styles.tabs}>
       {bars.map((bar) => {
         return (
-          <Bar clickHandler={menuClickHandler} key={bar.title} {...bar}></Bar>
+          <Bar
+            clickHandler={menuClickHandler}
+            key={bar.title}
+            title={bar.title}
+            detail={bar.detail + "회"}
+          ></Bar>
         );
       })}
     </ul>
