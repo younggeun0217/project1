@@ -32,7 +32,7 @@ export default function MenuTab() {
           화제가 됐던 검색어
         </li>
       ),
-      content: <TimeTab menuClickHandler={menuSelect}></TimeTab>,
+      content: <TimeTab barClickHandler={menuSelect}></TimeTab>,
     },
   ];
   return (

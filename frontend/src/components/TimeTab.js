@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../css/TimeTab.module.css";
-import TimeBar from "./TimeBar";
+import BarList from "./BarList";
 
 export default function TimeTab(props) {
   const [useIndex, setUseIndex] = useState(0);
@@ -39,9 +39,16 @@ export default function TimeTab(props) {
   const clickHandler = (_Id) => {
     setUseIndex(_Id);
   };
-  const menuClickHandler = () => {
-    props.menuClickHandler();
+  const barClickHandler = () => {
+    props.barClickHandler();
   };
+  const [bars, setBars] = useState([]);
+  useEffect(() => {
+    setBars([
+      { title: "뉴스 제목", detail: 60 },
+      { title: "뉴스 제목2", detail: 50 },
+    ]);
+  }, []);
   return (
     <>
       <ul className={styles.tabs}>
@@ -49,7 +56,11 @@ export default function TimeTab(props) {
           return section.title;
         })}
       </ul>
-      <TimeBar menuClickHandler={menuClickHandler}></TimeBar>
+      <BarList
+        barClickHandler={barClickHandler}
+        bars={bars}
+        detailUnit="회"
+      ></BarList>
     </>
   );
 }
